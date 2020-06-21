@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="col-sm-8 text-left"> 
+  <h2 class="list-title"> List Videos</h2>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Theme</th>
+        <th scope="col">Likes</th>
+        <th scope="col">Unlikes</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    {% for video in list_videos %}
+      <tbody>
+        <tr>
+          <td>
+            <form action="/video/{{ video['_id'] }}">
+              <button class="btn btn-warning btn-sm"><i class="fa fa-trash-o"></i> </button>
+            </form>
+          </td>
+          <td>{{ video["name"] }}</td>
+          <td>{{ video["theme"] }}</td>
+          <td>
+              {{ video["likes"] }}
+          </td>
+          <td>
+            {{ video["unlikes"] }}
+        </td>
+          <td>
+            <form action="/like/{{ video['_id'] }}">
+              <button class="btn btn-primary btn-sm"><i class="fa fa-thumbs-up"></i> </button>
+            </form>
+          </td>
+          <td>
+            <form action="/unlike/{{ video['_id'] }}">
+              <button class="btn btn-danger btn-sm"><i class="fa fa-thumbs-down"></i> </button>
+            </form>
+          </td>
+        </tr>
+      </tbody>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

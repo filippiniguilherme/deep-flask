@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Videos Analyzer</h1>
+    <p class="lead">This is a simple application to understand what kind of video, people are more interested in.</p>
+  </div>
+</div>
+
+<div class="card mx-xl-5 center_div">
+  <p class="h2 py-4 register-title">Register your video</p>
+  <div class="card-body">
+    <form method="post" action="/addVideo">
+        <div class="form-group">
+          <label for="inputVideoName">Name</label>
+          <input type="text" class="form-control" name="inputVideoName" id="inputVideoName" placeholder="Your video name...">
+        </div>
+      <div class="form-group">
+        <label for="inputVideoTheme">Theme</label>
+        <input type="text" class="form-control" name="inputVideoTheme" id="inputVideoTheme" placeholder="Your video theme...">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">
+          Register Video
+        </button>
+      </div>
+      {% if success %}
+        <h3> Video added successfully</h3>
+      {% endif %}
+    </form>
+  </div>
+</div>
+{% endblock%}

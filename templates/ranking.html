@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="col-sm-8 text-left"> 
+  <h2 class="ranking-title"> Videos Ranked by Likes</h2>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Theme</th>
+          <th scope="col">Ranking</th>
+        </tr>
+      </thead>
+      {% for video, ranking_score in videos_list %}
+        <tbody>
+          <tr>
+            <td>{{ video["theme"] }}</td>
+            <td>{{ ranking_score }}</td>
+          </tr>
+        </tbody>
+      {% endfor %}
+    </table>
+</div>
+{% endblock %}

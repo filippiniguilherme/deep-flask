@@ -1,0 +1,1 @@
+MONGO_URI = "mongodb://gfilippini:UH8pzt7vuviMpkv4@deeperflask-shard-00-00-f4ead.mongodb.net:27017,deeperflask-shard-00-01-f4ead.mongodb.net:27017,deeperflask-shard-00-02-f4ead.mongodb.net:27017/Videos?ssl=true&replicaSet=deeperflask-shard-0&authSource=admin&retryWrites=true&w=majority"
